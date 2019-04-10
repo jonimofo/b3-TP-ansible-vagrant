@@ -1,0 +1,7 @@
+---
+- name: Upgrade Packages
+  hosts: all
+  remote_user: vagrant
+
+  roles:
+    - common
