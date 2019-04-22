@@ -4,13 +4,12 @@
 #   roles:
 #     - common
 
-# - hosts: db
-#   remote_user: vagrant
-#   roles:
-#     - mysql
+- hosts: db
+  remote_user: vagrant
+  roles:
+    - mysql
 
 - hosts: web
   remote_user: vagrant
   roles:
-    - mysql
     - web
