@@ -1,7 +1,7 @@
 ---
 - name: Install Apache
   yum:
-    name: apache2
+    name: httpd
     state: latest
     update_cache: true
 
@@ -22,6 +22,6 @@
 
 - name: Ensure apache2 is running
   service:
-    name: apache2
+    name: httpd
     state: started
   notify: restart apache

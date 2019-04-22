@@ -1,12 +1,6 @@
-# Mysql
-mysql_user: wordpress
-mysql_password: ch@nge_me
-mysql_db_name: wordpress
-
-# Wordpress
-wp_user: wordpress
+# Wordpress/Mysql
+wp_db_user: wordpressuser
 wp_db_name: wordpress 
-wp_db_user: wordpress
 wp_db_password: ch@nge_me
 
 # FTP

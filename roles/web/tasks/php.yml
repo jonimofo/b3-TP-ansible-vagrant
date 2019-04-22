@@ -1,15 +1,15 @@
 ---
 - name: Install and start php
-  apt:
-    name: php7.2
-    update-cache: yes
+  yum:
+    name: php
 
 - name: Install php packages
-  apt:
+  yum:
     name: "{{ packages }}"
   vars:
     packages:
-        - php-mysql
         - php-gd
+        - php-mysql
+        - php-pdo
         - php-fpm
-        - python-mysqldb
+        # - python-mysqldb

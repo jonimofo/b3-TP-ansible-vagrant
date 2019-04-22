@@ -14,3 +14,5 @@ ansible-playbook -i inventory.ini site.yml
 
 ### TODO (restant à faire/améliorer)
 * redirection Apache de / sur /wordpress (je m'y suis cassé les deux 2 jours et je n'ai toujours pas réussi)
+* [web : Create user "wordpress_ftp"] 
+ [WARNING]: The input password appears not to have been hashed. The 'password' argument must be encrypted for this module to work properly.

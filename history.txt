@@ -1,0 +1,63 @@
+cd /var/www/
+    6  ls
+    7  cd html/
+    8  ls
+    9  ls
+   10  ls wp-content/
+   11  mkdir /var/www/html/wp-content/uploads
+   12  sudo chown -R apache:apache /var/www/html/*
+   13  ls
+   14  ls -l
+   15  cd wp-content/
+   16  ls
+   17  cd ..
+   18  ls
+   19  cp wordpress/wp-config.php
+   20  cp wordpress/wp-config.php .
+   21  cat wp-config.php
+   22  vi wp-config.php
+   23*
+   24  systemctl status httpd.service
+   25  ls
+   26  ll
+   27  rm wordpress/wp-config.php
+   28  mv wp-config.php wordpress/
+   29  systemctl restart httpd
+   30  mysql -u root -p
+   31  yum install mariadb mariadb-server
+   32  mysql -u root -p
+   33  mysql -u root
+   34  mysql -u root
+   35  mysql -u wordpress
+   36  systemctl start mariadb
+   37  systemctl status mariadb
+   38  mysql -u root
+   39  yum install php-gd
+   40  service httpd restart
+   41  ls /var/www/
+   42  ls
+   43  pwd
+   44  ls
+   45  mysql -u root
+   46  ls
+   47  pwd
+   48  cp -R * ..
+   49  service httpd restart
+   50  ls
+   51  cd ..
+   52  ls
+   53  cd html/
+   54  rm -rf wordpress/ wp-content/
+   55  cd h
+   56  ls
+   57  cd ..
+   58  ls
+   59  mv wordpress/ wp-content/ html/
+   60  cd html/
+   61  ls
+   62  ls wp-content/
+   63  sudo chown -R apache:apache /var/www/html/*
+   64  chown -R apache:apache /var/www/html/*
+   65  vi wordpress/wp-config.php
+   66  service httpd restart
+   67  history

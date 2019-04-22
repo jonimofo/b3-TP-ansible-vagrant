@@ -23,7 +23,7 @@
 define( 'DB_NAME', '{{ wp_db_name }}' );
 
 /** MySQL database username */
-define( 'DB_USER', '{{ wp_user }}' );
+define( 'DB_USER', '{{ wp_db_user }}' );
 
 /** MySQL database password */
 define( 'DB_PASSWORD', '{{ wp_db_password }}' );

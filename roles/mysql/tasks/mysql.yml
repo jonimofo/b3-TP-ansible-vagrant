@@ -1,23 +1,18 @@
 ---
-- name: Install Mysql
+- name: Install Mariadb & needed packages
   yum:
     name:
-      - mysql-server
+      - mariadb
+      - mariadb-server
+      - MySQL-python
     state: latest
 
-- name: Install mysql packages
-  apt:
-    name: "{{ packages }}"
-  vars:
-    packages:
-        - python-mysqldb
-
-- name: Ensure mysql is running
+- name: Ensure mariadb is running
   service:
-    name: mysql
+    name: mariadb
     state: started
     enabled: true
-  notify: restart mysql
+  notify: restart mariadb
 
 # Removes all anonymous user accounts
 - mysql_user:
@@ -27,11 +22,11 @@
 
 - name: Create new database 'wordpress'
   mysql_db:   
-    name: "{{ mysql_db_name }}"
+    name: "{{ wp_db_name }}"
     state: present
 
 - mysql_user:
-    name: "{{ mysql_db_name }}"
-    password: "{{ mysql_password }}"
+    name: "{{ wp_db_user }}"
+    password: "{{ wp_db_password }}"
     priv: '*.*:ALL,GRANT'
     state: present
