@@ -1,0 +1,37 @@
+---
+- name: Install Mysql
+  yum:
+    name:
+      - mysql-server
+    state: latest
+
+- name: Install mysql packages
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+        - python-mysqldb
+
+- name: Ensure mysql is running
+  service:
+    name: mysql
+    state: started
+    enabled: true
+  notify: restart mysql
+
+# Removes all anonymous user accounts
+- mysql_user:
+    name: ''
+    host_all: yes
+    state: absent
+
+- name: Create new database 'wordpress'
+  mysql_db:   
+    name: "{{ mysql_db_name }}"
+    state: present
+
+- mysql_user:
+    name: "{{ mysql_db_name }}"
+    password: "{{ mysql_password }}"
+    priv: '*.*:ALL,GRANT'
+    state: present

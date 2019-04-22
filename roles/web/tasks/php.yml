@@ -1,0 +1,15 @@
+---
+- name: Install and start php
+  apt:
+    name: php7.2
+    update-cache: yes
+
+- name: Install php packages
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+        - php-mysql
+        - php-gd
+        - php-fpm
+        - python-mysqldb

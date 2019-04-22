@@ -1,0 +1,18 @@
+---
+- name: Install FTP server (vsftpd)
+  yum:
+    name: vsftpd
+    state: latest
+
+- name: Ensure vsftpd is running
+  service:
+    name: vsftpd
+    state: started
+    enabled: true
+  notify: restart vsftpd
+
+- name: Create user "wordpress_ftp"
+  user:
+    name: "{{ wordpress_ftp_user }}"
+    groups: apache
+    password: "{{ wordpress_ftp_password }}"

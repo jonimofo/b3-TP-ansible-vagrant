@@ -1,0 +1,15 @@
+---
+# - hosts: all
+#   remote_user: vagrant
+#   roles:
+#     - common
+
+- hosts: db
+  remote_user: vagrant
+  roles:
+    - mysql
+
+- hosts: web
+  remote_user: vagrant
+  roles:
+    - web

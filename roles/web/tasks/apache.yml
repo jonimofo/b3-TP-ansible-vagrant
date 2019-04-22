@@ -1,0 +1,27 @@
+---
+- name: Install Apache
+  yum:
+    name: apache2
+    state: latest
+    update_cache: true
+
+- name: enable mod_rewrite
+  apache2_module:
+    name: rewrite
+    state: present
+
+- name: Create group "apache"
+  group:
+    name: apache
+    state: present
+
+- name: Create user "apache"
+  user:
+    name: apache
+    groups: apache
+
+- name: Ensure apache2 is running
+  service:
+    name: apache2
+    state: started
+  notify: restart apache

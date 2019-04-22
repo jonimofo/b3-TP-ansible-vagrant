@@ -1,9 +1,0 @@
----
-- hosts: webservers
-  remote_user: vagrant
-
-  tasks:
-    - name: upgrade all packages
-      yum:
-        name: '*'
-        state: latest

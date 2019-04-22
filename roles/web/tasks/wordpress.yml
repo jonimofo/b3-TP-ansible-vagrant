@@ -1,0 +1,35 @@
+---
+- name: Download and unarchive Wordpress
+  unarchive:
+    src: http://wordpress.org/latest.tar.gz
+    dest: /var/www/html/
+    remote_src: yes
+
+- name: Create '/var/www/html/wp-content' directory
+  file:
+    path: /var/www/html/wp-content
+    state: directory
+    owner: apache
+    group: apache
+
+- name: Create group "wordpress"
+  group:
+    name: wordpress
+    state: present
+
+- name: Create user "wordpress"
+  user:
+    name: wordpress
+    groups: wordpress
+
+- name: Copy wordpress conf
+  template:
+    src: templates/wp-config.php
+    dest: /var/www/html/wordpress
+
+- name: Change permissions
+  file:
+    path: /var/www/html/wordpress/
+    owner: wordpress_ftp
+    group: apache
+    recurse: yes
