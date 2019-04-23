@@ -1,5 +1,4 @@
 ---
-- include: php.yml
 - include: apache.yml
 - include: ftp.yml
 - include: wordpress.yml

@@ -1,13 +1,13 @@
-Vagrant.configure("2") do |ubuntu|
+Vagrant.configure("2") do |centos|
 
-ubuntu.vm.box = "centos/7"
+centos.vm.box = "centos/7"
 
 # Disable default synced folder
-ubuntu.vm.synced_folder ".", "/vagrant", disabled: true
-ubuntu.ssh.insert_key = false
+centos.vm.synced_folder ".", "/vagrant", disabled: true
+centos.ssh.insert_key = false
 
-# Ubuntu - web
-ubuntu.vm.define "web" do |config|
+# centos - web
+centos.vm.define "web" do |config|
   config.vm.hostname = "web"
   config.vm.network :private_network, ip: "192.168.200.201"
   config.vm.provider "libvirt" do |libvirt|
@@ -17,8 +17,8 @@ ubuntu.vm.define "web" do |config|
   end
 end
 
-# Ubuntu - mysql
-ubuntu.vm.define "mysql" do |config|
+# centos - mysql
+centos.vm.define "mysql" do |config|
   config.vm.hostname = "mysql"
   config.vm.network :private_network, ip: "192.168.200.202"
   config.vm.provider "libvirt" do |libvirt|

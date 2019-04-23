@@ -11,8 +11,8 @@
     enabled: true
   notify: restart vsftpd
 
-- name: Create user "wordpress_ftp"
-  user:
-    name: "{{ wordpress_ftp_user }}"
-    groups: apache
-    password: "{{ wordpress_ftp_password }}"
+# - name: Create user "wordpress_ftp"
+#   user:
+#     name: "{{wordpress_ftp_user}}"
+#     groups: apache
+#     password: "{{wordpress_ftp_password}}"

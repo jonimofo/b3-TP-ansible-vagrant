@@ -5,13 +5,6 @@
     dest: /var/www/html/
     remote_src: yes
 
-- name: Create '/var/www/html/wp-content' directory
-  file:
-    path: /var/www/html/wp-content
-    state: directory
-    owner: apache
-    group: apache
-
 - name: Create group "wordpress"
   group:
     name: wordpress
@@ -27,9 +20,5 @@
     src: templates/wp-config.php
     dest: /var/www/html/wordpress
 
-- name: Change permissions
-  file:
-    path: /var/www/html/wordpress/
-    owner: wordpress_ftp
-    group: apache
-    recurse: yes
+- name: Change "/var/www/html/wordpress/" permissions
+  file: path=/var/www/html/wordpress/ owner=wordpress group=wordpress state=directory recurse=yes setype=httpd_sys_content_t

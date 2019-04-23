@@ -1,27 +1,19 @@
 ---
-- name: Install Apache
+- name: Install Apache, php & php-mysql
   yum:
-    name: httpd
+    name: httpd,php,php-mysql
     state: latest
-    update_cache: true
 
-- name: enable mod_rewrite
-  apache2_module:
-    name: rewrite
-    state: present
+- name: Install libselinux-python
+  yum: name=libselinux-python state=present
 
-- name: Create group "apache"
-  group:
-    name: apache
-    state: present
+- name: Disable SElinux
+  selinux:
+    state: disabled
 
-- name: Create user "apache"
-  user:
-    name: apache
-    groups: apache
-
-- name: Ensure apache2 is running
-  service:
-    name: httpd
+- name: Make sure Apache is running
+  systemd:
     state: started
+    enabled: yes
+    name: httpd
   notify: restart apache

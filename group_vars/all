@@ -1,9 +1,9 @@
 # Wordpress/Mysql
 wp_db_user: wordpressuser
 wp_db_name: wordpress 
-wp_db_password: ch@nge_me
-wp_db_ip: 192.168.200.202:3306
+wp_db_password: password
+wp_db_ip: 192.168.200.202
 
 # FTP
 wordpress_ftp_user: wordpress_ftp
-wordpress_ftp_password: ch@nge_me
+wordpress_ftp_password: password
