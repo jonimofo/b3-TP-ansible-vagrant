@@ -28,6 +28,7 @@ Se connecter aux machines
 ```
 vagrant ssh web
 ```
+
 ```
 vagrant ssh mysql
 ```
