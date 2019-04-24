@@ -1,4 +1,5 @@
 ## Benjamin Giralt - TP B3 Ansible
+#### Déploiement de Wordpress via Ansible
 
 Ce tp **ANSIBLE** a été réalisé et testé sous **Vagrant**  avec deux machines sous **Centos 7** :
 * web (192.168.200.201)
